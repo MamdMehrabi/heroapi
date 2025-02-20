@@ -1,6 +1,6 @@
 
 description = (
-    "- [GitHub](https://github.com/irvaniamirali/HeroAPI)\n"
+    "- [GitHub](https://github.com/MamdMehrabi/HeroAPI)\n"
     "- [Telegram](https://t.me/HeroAPI)\n"
     "- [LiveAPI Docs](https://heroapi.ir/liveapi)"
 )
@@ -21,7 +21,7 @@ app_config = {
     "redoc_url": None
 }
 
-LiveAPI_docs_url = "https://irvaniamirali.github.io/heroapi/"
+LiveAPI_docs_url = "https://MamdMehrabi.github.io/heroapi/"
 
 middleware_config = {
     "allow_credentials": True,

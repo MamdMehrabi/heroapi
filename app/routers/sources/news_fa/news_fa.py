@@ -15,7 +15,7 @@ async def news(page: Optional[int] = 1) -> list:
     return await news_v1(page)
 
 
-@router.get("/v2", status_code=status.HTTP_200_OK)
+# @router.get("/v2", status_code=status.HTTP_200_OK)
 async def news_v2(page: Optional[int] = 1) -> list:
     """
     Web service, the latest technological news. `page` parameter has 6000 pages

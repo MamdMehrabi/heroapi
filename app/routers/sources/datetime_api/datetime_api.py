@@ -1,7 +1,10 @@
 from fastapi import APIRouter, status
 
 from app.api.sources.datetime_api import (
-    iso_date, solar_date, ad_date, convert_ad_to_jalali, convert_jalali_to_ad
+    iso_date as _iso_date,
+    solar_date, ad_date, 
+    convert_ad_to_jalali as _convert_ad_to_jalali, 
+    convert_jalali_to_ad
 )
 
 from typing import Optional
@@ -25,12 +28,12 @@ async def ad_datetime() -> dict:
     return await ad_date()
 
 
-@router.get("/iso", status_code=status.HTTP_200_OK)
+# @router.get("/iso", status_code=status.HTTP_200_OK)
 async def iso_date(year: int, month: int, day: int, prefix: Optional[str] = "/") -> dict:
     """
     Return the Jalali date as a string in ISO 8601 format.
     """
-    return await iso_date(year, month, day, prefix)
+    return await _iso_date(year, month, day, prefix)
 
 
 @router.get("/convert-ad", status_code=status.HTTP_200_OK)
@@ -38,10 +41,10 @@ async def convert_ad_to_jalali(year: int, month: int, day: int) -> str:
     """
     Convert AD date to Jalali date.
     """
-    return await convert_ad_to_jalali(year, month, day)
+    return await _convert_ad_to_jalali(year, month, day)
 
 
-@router.get("/convert-jalali", status_code=status.HTTP_200_OK)
+# @router.get("/convert-jalali", status_code=status.HTTP_200_OK)
 async def convert_jalali_to_ad(year: int, month: int, day: int) -> str:
     """
     Convert Jalali date to AD date.
